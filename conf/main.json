@@ -1,0 +1,48 @@
+{
+    "flow": {
+        "main_flow": {
+            "processor": [
+                "parse_processor",
+                "feature_precessor",
+                "model_processor",
+                "response_processor"
+            ]
+        }
+    },
+    "processors": {
+        "parse_processor": {
+            "class": "ParseProcessor",
+            "params": []
+        },
+        "feature_precessor": {
+            "class": "FeatureProcessor",
+            "params": []
+        },
+        "model_processor": {
+            "class": "ModelProcessor",
+            "params": []
+        },
+        "response_processor": {
+            "class": "ResponseProcessor",
+            "params": []
+        }
+    },
+    "handlers": {
+        "query_feat_handler": {
+            "class": "QueryFeatHandler",
+            "params": []
+        },
+        "doc_feat_handler": {
+            "class": "DocFeatHandler",
+            "params": []
+        },
+        "encoder_handler": {
+            "class": "Encoder",
+            "params": []
+        },
+        "classifier_handler": {
+            "class": "Classifier",
+            "params": []
+        }
+    }
+}

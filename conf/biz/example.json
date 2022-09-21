@@ -1,0 +1,79 @@
+{
+    "biz": "example",
+    "feature": {
+        "stage": [
+            [
+                {
+                    "group": "query_feat",
+                    "input": ["query"],
+                    "is_shared": true,
+                    "handler": "query_feat_handler"
+                },
+                {
+                    "group": "doc_feat",
+                    "input": ["doc"],
+                    "is_shared": false,
+                    "handler": "doc_feat_handler"
+                }
+            ]
+        ]
+    },
+    "model": {
+        "stage": [
+            [
+                {
+                    "input": [
+                        {
+                            "name": "q_feat0",
+                            "is_shared": false
+                        },
+                        {
+                            "name": "q_feat1",
+                            "is_shared": false
+                        }
+                    ],
+                    "is_shared": true,
+                    "params": [],
+                    "handler": "encoder_handler",
+                    "output": ["q_vec"]
+                },
+                {
+                    "input": [
+                        {
+                            "name": "d_feat0",
+                            "is_shared": false
+                        },
+                        {
+                            "name": "d_feat1",
+                            "is_shared": false
+                        }
+                    ],
+                    "is_shared": false,
+                    "params": [],
+                    "handler": "encoder_handler",
+                    "output": ["d_vec"]
+                }
+            ],
+            [
+                {
+                    "input": [
+                        {
+                            "name": "q_vec",
+                            "is_shared": true
+                        },
+                        {
+                            "name": "d_vec",
+                            "is_shared": false
+                        }
+                    ],
+                    "handler": "classifier_handler",
+                    "params": ["model:example_model"],
+                    "output": ["score"]
+                }
+            ]
+        ]
+    },
+    "response": {
+        "columns": ["doc", "score"]
+    }
+}

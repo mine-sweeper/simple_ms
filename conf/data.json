@@ -1,0 +1,8 @@
+[
+    {
+        "name": "example_model",
+        "type": "ExampleModel",
+        "dir": "example_model",
+        "file": "example_model.txt"
+    }
+]
