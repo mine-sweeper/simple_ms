@@ -7,3 +7,4 @@ if sys.version[0] == '2':
 elif sys.version[0] == '3':
     from .handlers import encoder_handler
     from .handlers import classifier_handler
+    from .handlers import tf_handler

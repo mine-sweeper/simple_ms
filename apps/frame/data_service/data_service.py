@@ -3,6 +3,7 @@ import sys
 import json
 from .base_data import BaseData
 from .example_model import ExampleModel
+from .tensorflow_model import TensorflowModel
 
 
 class DataService(dict):

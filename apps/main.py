@@ -22,7 +22,7 @@ for m_name in dir(model_handlers):
         importlib.import_module('model.handlers.' + m_name)
 
 
-WORK_DIR = '/Users/porcodio/projects/ms/'
+WORK_DIR = '/Users/porcodio/projects/simple_ms/'
 class App(object):
     def __init__(self):
         pass
